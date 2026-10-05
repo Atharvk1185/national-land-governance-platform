@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: national-land-governance-platform
+    env: python
+    buildCommand: "pip install -r requirements.txt || true"
+    startCommand: "python3 run_server.py"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: HOST
+        value: 0.0.0.0
+      - key: LLM_PROVIDER
+        value: rule_based
