@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Digital Platform for Research, Policy Innovation, and Evidence-Based Land Governance</title>
+  <meta name="description" content="A national digital ecosystem for research, policy innovation, geospatial intelligence, and evidence-based land governance in India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- National Tricolor Ribbon -->
+  <div class="gov-tricolor-ribbon"></div>
+
+  <!-- Official Government Top Bar -->
+  <div class="gov-topbar">
+    <div class="gov-topbar-left">
+      <div class="gov-emblem-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/>
+        </svg>
+        <span>Government of India • Ministry of Rural Development • Department of Land Resources</span>
+      </div>
+    </div>
+    <div class="gov-topbar-right">
+      <span class="gov-disclaimer-pill">Demonstration Data — Not Official Government Statistics</span>
+      <span>National Informatics Centre (NIC) Supported Architecture</span>
+    </div>
+  </div>
+
+  <!-- Main Portal Header -->
+  <header class="gov-header">
+    <a href="#dashboard" class="gov-branding">
+      <!-- National Lion Capital / Emblem SVG Representation -->
+      <svg width="44" height="44" viewBox="0 0 100 100" fill="none" class="gov-emblem-img">
+        <circle cx="50" cy="50" r="46" fill="#0f2547" stroke="#f58220" stroke-width="3"/>
+        <circle cx="50" cy="50" r="38" stroke="#138808" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <!-- Ashoka Chakra Spokes Motif -->
+        <circle cx="50" cy="50" r="14" stroke="#ff9933" stroke-width="2"/>
+        <line x1="50" y1="36" x2="50" y2="64" stroke="#ff9933" stroke-width="1.5"/>
+        <line x1="36" y1="50" x2="64" y2="50" stroke="#ff9933" stroke-width="1.5"/>
+        <line x1="40" y1="40" x2="60" y2="60" stroke="#ff9933" stroke-width="1.5"/>
+        <line x1="40" y1="60" x2="60" y2="40" stroke="#ff9933" stroke-width="1.5"/>
+        <text x="50" y="24" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle" font-family="sans-serif">सत्यमेव जयते</text>
+        <text x="50" y="82" fill="#f58220" font-size="9" font-weight="bold" text-anchor="middle" font-family="sans-serif">BHOOMI</text>
+      </svg>
+      <div class="gov-brand-titles">
+        <span class="gov-portal-acronym">PRITHVI-NITI • NATIONAL PORTAL</span>
+        <span class="gov-portal-title">Land Governance Research & Policy Intelligence</span>
+        <span class="gov-portal-subtitle">National Digital Ecosystem for Evidence-Based Land Reforms</span>
+      </div>
+    </a>
+
+    <!-- Role Switcher & User Profile in Header -->
+    <div class="gov-header-actions">
+      <div class="role-switcher-box">
+        <label for="header-role-select">Switch Role:</label>
+        <select id="header-role-select" class="role-select">
+          <!-- Dynamically populated with all 8 user roles -->
+        </select>
+      </div>
+
+      <div class="user-profile-badge">
+        <img id="header-user-avatar" class="user-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="User Profile">
+        <div class="user-details">
+          <span id="header-user-name" class="user-name">Prof. Ananya Sen</span>
+          <span id="header-user-role" class="user-role-badge">RESEARCHER</span>
+          <span id="header-user-inst" style="font-size:10px; color:var(--gov-slate-500); max-width:140px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">IIT Bombay</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="gov-nav">
+    <a href="#dashboard" class="nav-item active">
+      <span class="nav-icon">📊</span> National Dashboard
+    </a>
+    <a href="#search" class="nav-item">
+      <span class="nav-icon">🔍</span> AI Research Search
+    </a>
+    <a href="#assistant" class="nav-item">
+      <span class="nav-icon">🤖</span> AI Research Assistant
+    </a>
+    <a href="#gis" class="nav-item">
+      <span class="nav-icon">🗺️</span> GIS Explorer & LULC
+    </a>
+    <a href="#policies" class="nav-item">
+      <span class="nav-icon">📜</span> Policy Monitor
+    </a>
+    <a href="#simulator" class="nav-item">
+      <span class="nav-icon">⚡</span> Policy Simulator
+    </a>
+    <a href="#analytics" class="nav-item">
+      <span class="nav-icon">📈</span> Climate & Disputes
+    </a>
+    <a href="#research" class="nav-item">
+      <span class="nav-icon">📚</span> Research Repository
+    </a>
+    <a href="#datasets" class="nav-item">
+      <span class="nav-icon">💾</span> Dataset Catalog
+    </a>
+    <a href="#workspace" class="nav-item">
+      <span class="nav-icon">👥</span> Research Workspace
+    </a>
+    <a href="#innovation" class="nav-item">
+      <span class="nav-icon">💡</span> Innovation & Grants
+    </a>
+    <a href="#knowledge-graph" class="nav-item">
+      <span class="nav-icon">🕸️</span> Knowledge Graph
+    </a>
+    <a href="#reports" class="nav-item">
+      <span class="nav-icon">📑</span> Policy Reports
+    </a>
+    <a href="#admin" class="nav-item">
+      <span class="nav-icon">⚙️</span> Admin Console
+    </a>
+  </nav>
+
+  <!-- Single Page Application Mount Point -->
+  <main class="gov-main" id="app-mount">
+    <!-- Component views rendered dynamically via app.js -->
+  </main>
+
+  <!-- Official Footer -->
+  <footer class="gov-footer">
+    <div class="footer-content">
+      <div class="footer-text">
+        <strong>National Digital Platform for Research, Policy Innovation, and Evidence-Based Land Governance</strong><br/>
+        Designed for SIH & Central Ministry Land Governance Strategy • Powered by FastAPI, PostGIS, pgvector, and Hybrid AI Architecture.<br/>
+        <span style="color:var(--gov-slate-500);">OpenAPI v3.0 REST Specifications • Role-Based Access Control (RBAC) • SHA-256 Audit Trail</span>
+      </div>
+      <div class="footer-disclaimer-box">
+        <strong>Disclaimer:</strong> Demonstration Prototype — Uses synthetic demo statistics and open-source spatial datasets.<br/>
+        Not official government records. Formulated for academic evaluation and policy innovation.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modules -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

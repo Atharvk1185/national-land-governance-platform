@@ -1,0 +1,31 @@
+# Production Dockerfile for National Land Governance Platform Backend
+FROM python:3.11-slim-bookworm
+
+# Set working directory & environment variables
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8000
+
+# Install system dependencies (including GDAL & spatial libraries if needed)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    sqlite3 \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy project files
+COPY backend /app/backend
+COPY frontend /app/frontend
+COPY run_server.py /app/run_server.py
+
+# Expose default HTTP port
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:8000/api/v1/health || exit 1
+
+# Run platform
+CMD ["python3", "run_server.py"]

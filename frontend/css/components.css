@@ -1,0 +1,512 @@
+/* ==========================================================================
+   National Digital Platform for Land Governance - Component Specific Styles
+   ========================================================================== */
+
+/* Search Hero & Unified Search Bar */
+.search-hero {
+  background: linear-gradient(135deg, var(--gov-navy-900) 0%, var(--gov-navy-800) 100%);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  color: #fff;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.search-hero::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.search-hero-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.search-hero-subtitle {
+  font-size: 13px;
+  color: var(--gov-slate-300);
+  margin-bottom: 24px;
+  max-width: 780px;
+}
+
+.search-input-box {
+  display: flex;
+  align-items: center;
+  background: var(--gov-white);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  box-shadow: var(--shadow-lg);
+  max-width: 900px;
+}
+
+.search-input-box input {
+  flex: 1;
+  border: none;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--gov-slate-800);
+  outline: none;
+  border-radius: var(--radius-sm);
+}
+
+.search-input-box select {
+  border: none;
+  border-left: 1px solid var(--gov-slate-200);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gov-slate-600);
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-btn {
+  background: var(--gov-saffron);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.search-btn:hover {
+  background: #e06c09;
+}
+
+.search-suggestions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 11px;
+}
+.suggestion-chip {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.suggestion-chip:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* RAG Synthesized Answer Card */
+.rag-answer-card {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-blue-100);
+  border-left: 5px solid var(--gov-blue-500);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.rag-answer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gov-slate-100);
+}
+.rag-answer-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gov-slate-800);
+}
+.rag-answer-body h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gov-navy-800);
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+.rag-answer-body ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+.rag-answer-body li {
+  margin-bottom: 6px;
+}
+
+/* Source Citations Box */
+.citations-box {
+  background: var(--gov-slate-50);
+  border: 1px solid var(--gov-slate-200);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-top: 20px;
+}
+.citations-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gov-slate-600);
+  margin-bottom: 10px;
+}
+.citations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.citation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--gov-slate-700);
+}
+.citation-badge {
+  background: var(--gov-navy-700);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+/* Interactive GIS Map Container */
+.gis-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 16px;
+  min-height: 600px;
+}
+@media (max-width: 1200px) {
+  .gis-layout {
+    grid-template-columns: 260px 1fr;
+  }
+  .gis-inspector {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 768px) {
+  .gis-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gis-sidebar {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-slate-200);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gis-viewport-box {
+  background: #111a2e;
+  border: 1px solid var(--gov-slate-300);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gis-toolbar {
+  background: rgba(15, 25, 47, 0.95);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  z-index: 10;
+}
+
+.gis-map-canvas-container {
+  flex: 1;
+  min-height: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gis-timeline-bar {
+  background: rgba(15, 25, 47, 0.95);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  z-index: 10;
+}
+.gis-timeline-bar input[type="range"] {
+  flex: 1;
+  accent-color: var(--gov-saffron);
+}
+
+.gis-inspector {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-slate-200);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+/* Layer Checklist */
+.layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.layer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: var(--gov-slate-50);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  cursor: pointer;
+}
+.layer-item input[type="checkbox"] {
+  accent-color: var(--gov-navy-700);
+}
+
+/* Policy Simulation Controls & Sliders */
+.sim-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .sim-controls-grid { grid-template-columns: 1fr; }
+}
+
+.sim-slider-group {
+  background: var(--gov-slate-50);
+  border: 1px solid var(--gov-slate-200);
+  padding: 14px;
+  border-radius: var(--radius-md);
+}
+.sim-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gov-slate-700);
+  margin-bottom: 8px;
+}
+.sim-slider-val {
+  font-weight: 700;
+  color: var(--gov-blue-500);
+}
+.sim-slider-group input[type="range"] {
+  width: 100%;
+  accent-color: var(--gov-navy-700);
+}
+.sim-slider-hint {
+  font-size: 11px;
+  color: var(--gov-slate-500);
+  margin-top: 4px;
+}
+
+/* Simulation Results Grid */
+.sim-results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (max-width: 1024px) {
+  .sim-results-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .sim-results-grid { grid-template-columns: 1fr; }
+}
+
+.sim-result-box {
+  background: var(--gov-white);
+  border: 1px solid var(--gov-slate-200);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+.sim-result-box.highlight {
+  border-color: var(--gov-emerald);
+  background: #f0fdf4;
+}
+
+/* Dual Year Comparison View */
+.dual-comparison-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.comparison-panel {
+  background: var(--gov-slate-100);
+  border: 1px solid var(--gov-slate-300);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+.comparison-year-badge {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gov-navy-900);
+  margin-bottom: 12px;
+}
+
+/* Research Assistant Chat Layout */
+.assistant-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  background: var(--gov-white);
+  border: 1px solid var(--gov-slate-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.chat-history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chat-message {
+  max-width: 85%;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.chat-message.user {
+  align-self: flex-end;
+  background: var(--gov-navy-700);
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+.chat-message.assistant {
+  align-self: flex-start;
+  background: var(--gov-slate-100);
+  color: var(--gov-slate-800);
+  border: 1px solid var(--gov-slate-200);
+  border-bottom-left-radius: 2px;
+}
+
+.chat-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--gov-slate-50);
+  border-top: 1px solid var(--gov-slate-200);
+}
+.chat-input-bar input {
+  flex: 1;
+  border: 1px solid var(--gov-slate-300);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-size: 13px;
+}
+.chat-input-bar input:focus {
+  border-color: var(--gov-blue-500);
+}
+
+/* Modal Window for Document & Report Previews */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-content {
+  background: var(--gov-white);
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+.modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--gov-slate-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--gov-slate-50);
+}
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gov-navy-900);
+}
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.modal-footer {
+  padding: 12px 24px;
+  border-top: 1px solid var(--gov-slate-200);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background: var(--gov-slate-50);
+}
+
+/* Knowledge Graph Canvas */
+.graph-canvas-box {
+  width: 100%;
+  height: 520px;
+  background: #0d1527;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Print Specific Styling */
+@media print {
+  .gov-header, .gov-nav, .gov-footer, .btn, .search-hero {
+    display: none !important;
+  }
+  body, .gov-main {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+  .card, .modal-content {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}

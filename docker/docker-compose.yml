@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL 16 with PostGIS & pgvector
+  database:
+    image: postgis/postgis:16-3.4
+    container_name: nlgirp_postgres
+    environment:
+      POSTGRES_DB: land_governance_db
+      POSTGRES_USER: nlgirp_user
+      POSTGRES_PASSWORD: nlgirp_secure_password_2025
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../database/schema.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+
+  # 2. Redis Cache
+  cache:
+    image: redis:7-alpine
+    container_name: nlgirp_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  # 3. National Platform Application Server
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    container_name: nlgirp_app
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - DATABASE_URL=postgresql://nlgirp_user:nlgirp_secure_password_2025@database:5432/land_governance_db
+      - REDIS_URL=redis://cache:6379/0
+      - LLM_PROVIDER=rule_based # Switchable to openai or local
+      - OPENAI_API_KEY=
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+      - cache
+    restart: unless-stopped
+
+  # 4. Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: nlgirp_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  pgdata:
